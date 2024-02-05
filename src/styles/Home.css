@@ -1,59 +1,61 @@
-.App {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* Home.css */
 
-  text-align: left;
-  /* background-color: #0d2a63; */
-}
+/* Import Geist Variable font */
+@font-face {
+    font-family: 'Geist Variable';
+    src: url('../Fonts/GeistVariableVF.ttf') format('opentype');
+  }
+  
+  /* Import Segoe UI Semibold font */
+  @font-face {
+    font-family: 'Segoe UI Semibold';
+    src: url('../Fonts/3868-font.ttf') format('opentype');
+  }
 
-.AppHeader {
-  height: 90px;
-  display: flex;
-  background-color: black;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 50px;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-  flex-wrap: wrap;
-}
+  .App {
+    background-color: #24272f;
+    min-height: 100vh;
+    display: flex;
+    font-family: 'Geist Variable', 'Segoe UI Semibold', sans-serif;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  /* .disconnect-btn,
+  .connect-btn {
+    font-family: 'Geist Variable';
+    font-size: x-large;
+    font-weight: 900;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }  */
 
-.AppBody {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding-top: 50px;
-}
 
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.input {
-  background: #f2f2f2;
-}
-
-.formField {
-  margin: 10px 0 10px 0;
-  min-width: 500px;
-  padding: 15px;
-  font-size: 16px;
-  border: 0;
-  font-family: "Roboto", sans-serif;
-}
-.formButton {
-  margin: 10px 0 10px 0;
-  padding: 15px;
-  font-size: 16px;
-  border: 0;
-  font-family: "Roboto", sans-serif;
-}
+  .connect-btn {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 15px;
+  }
+  
+  .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 400px;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  
+  .image-preview {
+    margin-top: 1.5rem;
+  }
+  
+  
