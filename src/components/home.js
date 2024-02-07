@@ -26,41 +26,53 @@ const Home = () => {
   return (
     <div className="main-container">
       <Main className="connect-btn" />
-      <div className="card">
-        <div className="card-body">
-          <div>
-            {file ? (
-              <div className="submit-photo-container">
-                <button className="remove-photo-button" onClick={handleRemovePhoto}>
-                  Remove Photo
-                </button>
+
+      <div className="card-column">
+        {/* First row for submitting photo */}
+        <div className="row">
+          <div className="card">
+            <div className="card-body">
+              <div>
+                {file ? (
+                  <div className="submit-photo-container">
+                    <button className="remove-photo-button" onClick={handleRemovePhoto}>
+                      Remove Photo
+                    </button>
+                  </div>
+                ) : (
+                  <div>
+                    <label htmlFor="fileInput" className="submit-photo-button">
+                      Submit Photo
+                    </label>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      id="fileInput"
+                      onChange={handleFileChange}
+                      style={{ display: "none" }}
+                    />
+                  </div>
+                )}
               </div>
-            ) : (
-              <label htmlFor="fileInput" className="submit-photo-button">
-                Submit Photo
-              </label>
-            )}
-            <input
-              type="file"
-              accept="image/*"
-              id="fileInput"
-              onChange={handleFileChange}
-              style={{ display: "none" }}
-            />
-          </div>
 
-          {file && (
-            <div className="image-preview">
-              <img src={URL.createObjectURL(file)} alt="Preview" />
+              {file && (
+                <div className="image-preview">
+                  <img src={URL.createObjectURL(file)} alt="Preview" />
+                </div>
+              )}
+
+              {/* Additional content */}
+              {!file && (
+                <p>Submit your photo <br />to get started</p>
+              )}
             </div>
-          )}
-
-        </div>
-        <div className="button-container">
-          <button className="scan-btn" onClick={handleScan}>
-            Scan
-          </button>
-          <button className="slick-btn" onClick={handleSlick}>Slick</button>
+            <div className="button-container">
+              <button className="scan-btn" onClick={handleScan}>
+                Nudify 👙
+              </button>
+              <button className="slick-btn" onClick={handleSlick}>Milkify 💦</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

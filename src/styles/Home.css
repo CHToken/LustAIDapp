@@ -2,103 +2,100 @@
 
 /* Import Geist Variable font */
 @font-face {
-    font-family: 'Geist Variable';
-    src: url('../Fonts/GeistVariableVF.ttf') format('opentype');
-  }
-  
-  /* Import Segoe UI Semibold font */
-  @font-face {
-    font-family: 'Segoe UI Semibold';
-    src: url('../Fonts/3868-font.ttf') format('opentype');
-  }
+  font-family: 'Geist Variable';
+  src: url('../Fonts/GeistVariableVF.ttf') format('opentype');
+}
 
-  .App {
-    background-color: #24272f;
-    min-height: 100vh;
-    display: flex;
-    font-family: 'Geist Variable', 'Segoe UI Semibold', sans-serif;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
+/* Import Segoe UI Semibold font */
+@font-face {
+  font-family: 'Segoe UI Semibold';
+  src: url('../Fonts/3868-font.ttf') format('opentype');
+}
 
-  .connect-btn {
-   display: flex;
-   justify-content: center;
-   margin-bottom: 20px;
-  }
-  
-  .card {
-    background-color: rgba(255, 255, 255, 0.8);
-    width: auto;
-    gap: 10px;
-    max-width: 650px;
-    margin-left: 12px;
-    margin-right: 12px;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    height: auto;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  
-  .image-preview {
-    margin-top: 1.5rem;
-  }
-  
-  .button-container {
-    gap: 20px;
-    display: flex;
-    justify-content: center;
-  }
+.App {
+  background-color: #24272f;
+  min-height: 100vh;
+  display: flex;
+  font-family: 'Geist Variable', 'Segoe UI Semibold', sans-serif;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 
-  button.scan-btn,
-  button.slick-btn {
-    border-radius: 10px;
-    color: white;
-    background-color: #020202;
-    font-weight: 800;
-    font-size: large;
-    border: 0px;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
+.connect-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
-  img {
-    overflow: hidden;
-    width: 100%;
-    margin-bottom: 15px;
-    display: flex;
-  }
+.card {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: auto;
+  gap: 10px;
+  max-width: 400px; /* Adjust max-width as needed */
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
 
-  input {
-    margin: auto;
-    display: none;
-    position: relative;
-  }
+.image-preview {
+  margin-top: 1.5rem;
+}
 
-  .submit-photo-button,
-  .remove-photo-button {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #060606;
-    color: #ffffff;
-    font-family: 'Geist Variable';
-    border: none;
-    font-weight: 800;
-    font-size: large;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .submit-photo-button:hover,
-  .remove-photo-button:hover {
-    background-color: #07192b;
-  }
-  
+.image-preview img {
+  width: 100%; /* Set images to fill the container */
+  max-width: 100%; /* Ensure images do not exceed container width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.button-container {
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+button.scan-btn,
+button.slick-btn {
+  border-radius: 10px;
+  color: white;
+  background-color: #020202;
+  font-weight: 800;
+  font-size: large;
+  border: 0px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+input {
+  margin: auto;
+  display: none;
+  position: relative;
+}
+
+.submit-photo-button,
+.remove-photo-button {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #060606;
+  color: #ffffff;
+  font-family: 'Geist Variable';
+  border: none;
+  font-weight: 800;
+  font-size: large;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-photo-button:hover,
+.remove-photo-button:hover {
+  background-color: #07192b;
+}
