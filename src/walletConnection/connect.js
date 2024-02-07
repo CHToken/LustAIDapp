@@ -8,7 +8,6 @@ const Connect = () => {
   return (
     <div className='connect-btn'>
       <DynamicWidget/>
-      {/* No button for manual signing since automatic signing is removed */}
     </div>
   );
 };

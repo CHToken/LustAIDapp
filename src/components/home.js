@@ -1,7 +1,7 @@
 // Home.js
-import React, { useState } from 'react';
-import '../styles/Home.css';
-import Main from '../walletConnection/connect';
+import React, { useState } from "react";
+import "../styles/Home.css";
+import Main from "../walletConnection/connect";
 
 const Home = () => {
   const [file, setFile] = useState(null);
@@ -11,25 +11,43 @@ const Home = () => {
     setFile(selectedFile);
   };
 
+  const handleRemovePhoto = () => {
+    setFile(null);
+  };
+
   const handleScan = () => {
-    console.log('Scanning image...');
+    console.log("Scanning image...");
   };
 
   const handleSlick = () => {
-    console.log('Applying Slick filter...');
+    console.log("Applying Slick filter...");
   };
 
   return (
     <div className="main-container">
-      <Main className='connect-btn'/>
+      <Main className="connect-btn" />
       <div className="card">
         <div className="card-body">
-      <input
-            type="file"
-            accept="image/*"
-            onChange={handleFileChange}
-            className="form-control"
-          />
+          <div>
+            {file ? (
+              <div className="submit-photo-container">
+                <button className="remove-photo-button" onClick={handleRemovePhoto}>
+                  Remove Photo
+                </button>
+              </div>
+            ) : (
+              <label htmlFor="fileInput" className="submit-photo-button">
+                Submit Photo
+              </label>
+            )}
+            <input
+              type="file"
+              accept="image/*"
+              id="fileInput"
+              onChange={handleFileChange}
+              style={{ display: "none" }}
+            />
+          </div>
 
           {file && (
             <div className="image-preview">
@@ -37,16 +55,12 @@ const Home = () => {
             </div>
           )}
 
-          {file && (
-            <div>
-              <button className='scan-btn' onClick={handleScan}>
-                Scan
-              </button>
-              <button onClick={handleSlick}>
-                Slick
-              </button>
-            </div>
-          )}
+        </div>
+        <div className="button-container">
+          <button className="scan-btn" onClick={handleScan}>
+            Scan
+          </button>
+          <button className="slick-btn" onClick={handleSlick}>Slick</button>
         </div>
       </div>
     </div>

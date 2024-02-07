@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Solflare from '@solflare-wallet/sdk';
 
 const Connect = ({ onConnect, onDisconnect, manualConnection }) => {
-  // const [loading, setLoading] = useState(true);
-  const [connecting, setConnecting] = useState(false); // New state for connecting
+  const [connecting, setConnecting] = useState(false); 
   const [wallet, setWallet] = useState(null);
   const [walletConnected, setWalletConnected] = useState(false);
 
@@ -14,16 +13,16 @@ const Connect = ({ onConnect, onDisconnect, manualConnection }) => {
       solflareWallet.on('connect', () => {
         console.log('connected', solflareWallet.publicKey.toString());
         // setLoading(false);
-        setConnecting(false); // Set connecting to false when connected
-        setWalletConnected(true); // Set walletConnected to true when connected
+        setConnecting(false);
+        setWalletConnected(true);
         onConnect();
       });
 
       solflareWallet.on('disconnect', () => {
         console.log('disconnected');
         // setLoading(false);
-        setConnecting(false); // Set connecting to false when disconnected
-        setWalletConnected(false); // Set walletConnected to false when disconnected
+        setConnecting(false);
+        setWalletConnected(false);
         onDisconnect();
       });
 
@@ -52,21 +51,21 @@ const Connect = ({ onConnect, onDisconnect, manualConnection }) => {
   }, [onConnect, onDisconnect, manualConnection]);
 
   const handleConnectClick = async () => {
-    setConnecting(true); // Set connecting to true when the connection process starts
+    setConnecting(true);
     if (wallet) {
       try {
         await wallet.connect();
       } catch (error) {
         console.error('Error connecting to Solflare wallet:', error);
         // setLoading(false);
-        setConnecting(false); // Set connecting to false when the connection fails
+        setConnecting(false); 
       }
     }
   };
 
   const handleDisconnectClick = () => {
     // setLoading(true);
-    setConnecting(true); // Set connecting to true when the disconnection process starts
+    setConnecting(true); 
     if (wallet) {
       wallet.disconnect();
     }
